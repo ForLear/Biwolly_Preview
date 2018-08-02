@@ -1,19 +1,22 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from '../pages/homePage/home.vue'
+import Home from '@/pages/home'
+
+/* 具体模块路由 */
+import Biwolly from './Biwolly_routes/biwolly'
 
 /* 使用路由 */
 Vue.use(Router)
 
 const home = {
-  path: '/home',
+  path: '/',
   name: 'Home',
   component: Home,
-  Children: [],
+  children: [],
 }
 
-home.Children.push()
+home.children.push(...Biwolly)
 
 const base = [
   home,
@@ -34,7 +37,13 @@ const router = new Router({
 /* 路由监听 */
 router.beforeEach((to, from, next) => {
   /* 验证登录信息等 */
+  if(to.path === '/home') {
+    next()
+  }
 
+  if(to.path === '/') {
+    next({ path: '/home' })
+  }
   next()
 })
 

@@ -17,6 +17,14 @@ module.exports = {
   /* 输出文件路径 */
   outputDir: IsProd ? outputDevp : outputTest,
 
+  /* 配置目录别名 */
+  chainWebpack: () => {
+    config.resolve.alias
+      .set('@', resolve('src'))
+  },
+
+  /* PWA相关 */
+  pwa: {},
 
   /* 用于嵌套生成的静态资产（js，css，img，fonts）的目录 */
   // assetsDir: '',
@@ -39,14 +47,19 @@ module.exports = {
     port: 2018,
     /* 代理配置 后台API相关 */
     // proxy: {
-    //   '/x': {
+    //   '/api': {
     //     target: process.env.VUE_VUE_APP_API_BASE_PATH,
     //     changeOrigin: true,
     //     pathRewrite: {
-    //       '^/x': '/x'
+    //       '^/api': '/api'
     //     }
     //   }
     // },
+  },
+
+  /* 第三方插件 */
+  pluginOptions: {
+
   },
 
 }

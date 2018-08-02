@@ -1,0 +1,15 @@
+@import 'layout.scss';
+
+@mixin header_nav($padding: 4px 10px 0 10px, $mb_15: 15px) {
+    position: relative;
+    padding: $padding;
+    margin-bottom: $mb_15; 
+}
+
+@mixin list($direction: column) {
+    @include flex($direction);
+}
+
+@mixin input($width: 155px) {
+    width: $width;
+}
