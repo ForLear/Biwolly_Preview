@@ -10,6 +10,12 @@ const outputDevp = 'dist_devp'
 
 const IsProd = process.env.NODE_DEV === 'production'
 
+/*  */
+const path = require('path');
+function resolve (dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   /* 基本路径 */
   baseUrl: IsProd ? BaseDevp : BaseTest,
@@ -18,7 +24,7 @@ module.exports = {
   outputDir: IsProd ? outputDevp : outputTest,
 
   /* 配置目录别名 */
-  chainWebpack: () => {
+  chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src'))
   },
