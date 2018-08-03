@@ -1,5 +1,5 @@
-import Home from '@/pages/home'
-
+import Home from '@/pages/home'   
+/* 1 */
 import Doc from '@/pages/homePage/doc'
 
 const routes = [
