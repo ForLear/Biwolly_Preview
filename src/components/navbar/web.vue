@@ -8,7 +8,7 @@
       <div :class="$style.fatman"></div>
       <span>胡 · 香蕉</span>
     </li>
-    <router-link tag="li" to="pageNav">
+    <router-link tag="li" to="/">
       <div :class="$style.sick"></div>
       <span>吴 · 木吉</span>
     </router-link>
