@@ -54,15 +54,15 @@ module.exports = {
     port: 2018,
     // host: '0.0.0.0',
     /* 代理配置 后台API相关 */
-    // proxy: {
-    //   '/api': {
-    //     target: process.env.VUE_VUE_APP_API_BASE_PATH,
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       '^/api': '/api'
-    //     }
-    //   }
-    // },
+    proxy: {
+      '/api': {
+        target: process.env.VUE_VUE_APP_API_BASE_PATH,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api'
+        }
+      }
+    },
   },
 
   /* 第三方插件 */
