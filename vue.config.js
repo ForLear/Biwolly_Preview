@@ -5,10 +5,10 @@ const BaseTest = '/'
 /* 正式环境 */
 const BaseDevp = '/'
 
-const outputTest = 'dist_test'
-const outputDevp = 'dist_devp'
+const outputDevp = 'dist_test'
+const outputProd = 'dist_prod'
 
-const IsProd = process.env.NODE_DEV === 'production'
+const IsProd = process.env.NODE_ENV === 'production'
 
 /*  */
 const path = require('path');
@@ -21,7 +21,7 @@ module.exports = {
   baseUrl: IsProd ? BaseDevp : BaseTest,
   
   /* 输出文件路径 */
-  outputDir: IsProd ? outputDevp : outputTest,
+  outputDir: IsProd ? outputProd : outputDevp,
 
   /* 配置目录别名 */
   chainWebpack: (config) => {
@@ -49,8 +49,10 @@ module.exports = {
 
   /* 本地服务配置 */
   devServer: {
+    
     /* 本地服务端口号 */
     port: 2018,
+    // host: '0.0.0.0',
     /* 代理配置 后台API相关 */
     // proxy: {
     //   '/api': {
