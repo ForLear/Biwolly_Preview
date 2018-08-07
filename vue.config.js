@@ -51,23 +51,22 @@ module.exports = {
   devServer: {
     
     /* 本地服务端口号 */
-    port: 2018,
+    port: 8102,
     // host: '0.0.0.0',
     /* 代理配置 后台API相关 */
-    // proxy: {
-    //   '/v1': {
-    //     target: process.env.VUE_VUE_APP_API_BASE_PATH,
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       '^/v1': '/v1'
-    //     }
-    //   }
-    // },
+    proxy: {
+      '/v1': {
+        target: process.env.VUE_APP_API_BASE_PATH,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/v1': '/v1'
+        }
+      }
+    },
   },
 
   /* 第三方插件 */
   pluginOptions: {
 
   },
-
 }
