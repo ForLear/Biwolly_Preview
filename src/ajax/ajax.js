@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router'
-import * as axios from 'axios'
+import * as Axios from 'axios'
 import constant from '@/constant'
 
 /* 缓存信息 */
