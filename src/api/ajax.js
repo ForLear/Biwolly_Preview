@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router'
-import * as axios from 'axios'
+import * as Axios from 'axios'
 import constant from '@/constant'
 
 /* 缓存信息 */
@@ -72,10 +72,10 @@ const instance = Axios.create({
   methods: 'post',
 
   /* API地址 */
-  baseURL: constants.ApiBasePath,
+  baseURL: constant.ApiBasePath,
 
   /* 请求超时 */
-  timeout: constants.ApiMaxResponseTime,
+  timeout: constant.ApiMaxResponseTime,
 
   /* 请求格式 */
   contentType: 'application/json;charset=UTF-8',
@@ -104,7 +104,7 @@ instance.interceptors.request.use((req) => {
   // const { data } = Req
 
   /* 封装已经认证的信息 */
-  const auto = getAutoInfo()
+  const auto = getAuthInfo()
   if(auto) {
     const userInfo = `${auto.token_type} ${auto.assets_token}`
     Req.headers.Authorization = userInfo
