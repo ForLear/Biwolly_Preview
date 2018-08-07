@@ -33,7 +33,7 @@ module.exports = {
   pwa: {},
 
   /* 用于嵌套生成的静态资产（js，css，img，fonts）的目录 */
-  // assetsDir: '',
+  assetsDir: 'static',
 
   /* 以多页模式构建应用程序使用到 */
   // page: undefined,
@@ -52,11 +52,10 @@ module.exports = {
     
     /* 本地服务端口号 */
     port: 8102,
-    // host: '0.0.0.0',
     /* 代理配置 后台API相关 */
     proxy: {
       '/v1': {
-        target: process.env.VUE_APP_API_BASE_PATH,
+        target: process.env.BI_WO_LLY,
         changeOrigin: true,
         pathRewrite: {
           '^/v1': '/v1'
