@@ -55,11 +55,11 @@ module.exports = {
     // host: '0.0.0.0',
     /* 代理配置 后台API相关 */
     // proxy: {
-    //   '/api': {
+    //   '/v1': {
     //     target: process.env.VUE_VUE_APP_API_BASE_PATH,
     //     changeOrigin: true,
     //     pathRewrite: {
-    //       '^/api': '/api'
+    //       '^/v1': '/v1'
     //     }
     //   }
     // },
