@@ -4,10 +4,19 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "build_devp_note": "测试环境,启动!",
+    "build_devp": "vue-cli-service build --mode development",
+    "build_prod_note": "正式环境,启动!",
+    "build_prod": "vue-cli-service build",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test_unit_node": "在vue-cli-service test:unit下使用",
+    "test_unit": "vue-cli-service test:unit",
+    "test_e2e_node": "在vue-cli-service test:e2e下使用",
+    "test_e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.16",
