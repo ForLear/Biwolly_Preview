@@ -16,6 +16,7 @@
     "test_e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "cross-env": "^5.2.0",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.1.0",
