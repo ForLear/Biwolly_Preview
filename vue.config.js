@@ -49,7 +49,6 @@ module.exports = {
 
   /* 本地服务配置 */
   devServer: {
-    
     /* 本地服务端口号 */
     port: 8102,
     /* 代理配置 后台API相关 */
