@@ -1,6 +1,6 @@
-import Home from '@/pages/home'   
+const Home = () => import('@/pages/home')
 
-import Doc from '@/pages/homePage/doc'
+const Doc = () => import('@/pages/homePage/doc')
 
 const routes = [
   {
