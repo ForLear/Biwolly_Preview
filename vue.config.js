@@ -10,6 +10,8 @@ const outputProd = 'dist_prod'
 
 const IsProd = process.env.NODE_ENV === 'production'
 
+const target = 'https://bihlibihli.herokuapp.com/api/'
+
 /*  */
 const path = require('path');
 function resolve (dir) {
@@ -53,13 +55,14 @@ module.exports = {
     port: 8102,
     /* 代理配置 后台API相关 */
     proxy: {
-      '/v1': {
+      '/api': {
         target: process.env.BI_WO_LLY,
+        // target: target,
         changeOrigin: true,
         pathRewrite: {
-          '^/v1': '/v1'
+          '^/api': '/'
         }
-      }
+      },
     },
   },
 

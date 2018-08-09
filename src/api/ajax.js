@@ -28,6 +28,7 @@ export const getAuthInfo = function() {
 
 /* 检查API响应情况 */
 const checkRespones = function(res) {
+  console.log(res)
   const code = res.ResultCode
   if(code === constant.ApiResultCodeNormal) {
     /* API响应正常 */
