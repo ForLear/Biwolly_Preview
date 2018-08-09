@@ -9,8 +9,11 @@ import store from './store'
 Vue.config.productionTip = false
 
 /* 异常捕获 */
-// Vue.config.errorHandler = function(msg, vm, trace) {
-// }
+Vue.config.errorHandler = function(msg, vm, trace) {
+  console.log(msg)
+  console.log(vm)
+  console.log(trace)
+}
 
 new Vue({
   router,

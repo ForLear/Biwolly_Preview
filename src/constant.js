@@ -1,7 +1,7 @@
 /* api请求 */
 module.exports = {
   /* 请求基本路径 */
-  ApiBasePath: process.env.VUE_APP_API_BASE_PATH,
+  ApiBasePath: process.env.BI_WO_LLY,
 
   /* 最大响应时间 */
   ApiMaxResponseTime: 3e4,
