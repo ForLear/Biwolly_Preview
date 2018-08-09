@@ -21,6 +21,7 @@ export const clearAuthInfo = function() {
 /* 获取缓存信息 */
 export const getAuthInfo = function() {
   let user = sessionStorage.getItem(CacheKeyOfAuth)
+  /* JS短路表达式 */
   user = user && JSON.parse(user)
   return user
 }
