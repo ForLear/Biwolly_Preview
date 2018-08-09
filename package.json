@@ -20,9 +20,6 @@
     "babel-plugin-component": "^1.1.1",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.5",
-    "fonts": "0.0.2",
-    "node-sass": "^4.9.2",
-    "sass-loader": "^7.1.0",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -31,6 +28,8 @@
     "@vue/cli-plugin-babel": "^3.0.0-rc.10",
     "@vue/cli-plugin-eslint": "^3.0.0-rc.10",
     "@vue/cli-service": "^3.0.0-rc.10",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.16"
   },
   "eslintConfig": {
