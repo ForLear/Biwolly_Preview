@@ -1,6 +1,6 @@
 <template>
   <section :class="$style.place">
-    123
+    <el-button>123</el-button>
   </section>
 </template>
 

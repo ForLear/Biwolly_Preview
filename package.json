@@ -17,8 +17,10 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-plugin-component": "^1.1.1",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.5",
+    "fonts": "0.0.2",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.16",
