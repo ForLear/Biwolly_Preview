@@ -21,12 +21,14 @@ export const clearAuthInfo = function() {
 /* 获取缓存信息 */
 export const getAuthInfo = function() {
   let user = sessionStorage.getItem(CacheKeyOfAuth)
+  /* JS短路表达式 */
   user = user && JSON.parse(user)
   return user
 }
 
 /* 检查API响应情况 */
 const checkRespones = function(res) {
+  console.log(res)
   const code = res.ResultCode
   if(code === constant.ApiResultCodeNormal) {
     /* API响应正常 */
