@@ -10,10 +10,8 @@ const outputProd = 'dist_prod'
 
 const IsProd = process.env.NODE_ENV === 'production'
 
-const target = 'https://bihlibihli.herokuapp.com/api/'
-
-/*  */
 const path = require('path');
+
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
