@@ -67,7 +67,7 @@ module.exports = {
   },
 
   /* 第三方插件 */
-  // pluginOptions: {
+  pluginOptions: {
 
-  // },
+  },
 }
