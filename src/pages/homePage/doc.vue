@@ -25,15 +25,6 @@ export default {
 
   methods: {
     async a() {
-<<<<<<< HEAD
-      // let params = {
-      //   name: '很皮的大兄弟',
-      //   email: '88888881@qq.com',
-      //   password: '123456'
-      // }
-      // let agin = await register(params)
-      // console.log(agin)
-=======
       try {
         let params = {
           name: '很皮的大兄弟',
@@ -45,7 +36,6 @@ export default {
         console.log(err)
         handleErr(err)
       }
->>>>>>> 4e84697d1a772247b3a09f46a4e1509be2bcb3a6
     }
   }
 }

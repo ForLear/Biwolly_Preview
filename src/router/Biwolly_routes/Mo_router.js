@@ -2,6 +2,7 @@ const Home = () => import('@/pages/home')
 
 const Doc = () => import('@/pages/homePage/doc')
 
+
 const routes = [
   {
     path: '/Doc',
