@@ -1,6 +1,6 @@
 <template lang="html">
   <section :class="$style.bg_color">
-    <Navbar/>
+    <!-- <Navbar/> -->
     <router-view/>
   </section>
 </template>

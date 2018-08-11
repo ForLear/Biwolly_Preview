@@ -1,19 +1,13 @@
-const Home = () => import('@/pages/home')
-
 const login = () => import('@/pages/login/login')
 
 const routes = [
-  {
-    path: '/login',
-    name: 'login',
-    component: login,
-  },
+
 ]
 
 const route = {
-  path: '/',
+  path: '/login',
   name: '',
-  component: Home,
+  component: login,
   children: [],
 }
 
