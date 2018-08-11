@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { register } from '@/api'
+import { register, login, handleErr } from '@/api'
 export default {
   name: 'doc',
 
@@ -25,13 +25,17 @@ export default {
 
   methods: {
     async a() {
-      let params = {
-        name: '很皮的大兄弟',
-        email: '88888881@qq.com',
-        password: '123456'
+      try {
+        let params = {
+          name: '很皮的大兄弟',
+          email: '88888881@qq.com',
+          password: '123456'
+        }
+        let agin = await login(params)
+      } catch(err) {
+        console.log(err)
+        handleErr(err)
       }
-      let agin = await register(params)
-      console.log(agin)
     }
   }
 }
