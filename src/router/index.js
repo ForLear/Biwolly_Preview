@@ -17,7 +17,7 @@ const home = {
 }
 
 home.children.push(...Biwolly)
-console.log(home)
+
 const base = [
   home,
   {
