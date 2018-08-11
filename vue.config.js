@@ -10,8 +10,8 @@ const outputProd = 'dist_prod'
 
 const IsProd = process.env.NODE_ENV === 'production'
 
+/* 配置chainWebpack */
 const path = require('path');
-
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
@@ -55,7 +55,6 @@ module.exports = {
     proxy: {
       '/api': {
         target: process.env.BI_WO_LLY,
-        // target: target,
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/'

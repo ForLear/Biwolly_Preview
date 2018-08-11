@@ -7,7 +7,7 @@ export const register = function(params) {
   return ajax
     .post('/api/users', params)
     .then((res) => {
-      return ajax.checkResp(res)
+      return ajax.checkResp(res) 
     })
 }
 
