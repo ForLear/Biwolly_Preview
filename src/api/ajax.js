@@ -28,7 +28,6 @@ export const getAuthInfo = function() {
 
 /* 检查API响应情况 */
 const checkRespones = function(res) {
-  console.log(res)
   const code = res.ResultCode
   if(code === constant.ApiResultCodeNormal) {
     /* API响应正常 */
@@ -128,7 +127,6 @@ instance.interceptors.response.use((res) => {
   err.msg = '你掉网了大兄弟'
   return Promise.reject(Err)
 })
-
 
 export const handleErr = handleError
 
