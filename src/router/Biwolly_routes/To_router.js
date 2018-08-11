@@ -1,12 +1,12 @@
 const Home = () => import('@/pages/home')
 
-const Doc = () => import('@/pages/homePage/doc')
+const login = () => import('@/pages/login/login')
 
 const routes = [
   {
-    path: '/Doc',
-    name: 'Doc',
-    component: Doc,
+    path: '/login',
+    name: 'login',
+    component: login,
   },
 ]
 

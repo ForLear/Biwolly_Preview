@@ -25,13 +25,13 @@ export default {
 
   methods: {
     async a() {
-      let params = {
-        name: '很皮的大兄弟',
-        email: '88888881@qq.com',
-        password: '123456'
-      }
-      let agin = await register(params)
-      console.log(agin)
+      // let params = {
+      //   name: '很皮的大兄弟',
+      //   email: '88888881@qq.com',
+      //   password: '123456'
+      // }
+      // let agin = await register(params)
+      // console.log(agin)
     }
   }
 }
