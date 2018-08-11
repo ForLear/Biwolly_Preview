@@ -1,6 +1,6 @@
 import Vue from 'vue'
-// import ElementUI from 'element-ui'
-// import 'element-ui/lib/theme-chalk/index.css'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 import App from './App.vue'
 import router from './router'
@@ -14,6 +14,7 @@ Vue.use(ElementUI)
 
 /* 异常捕获 */
 Vue.config.errorHandler = function(msg, vm, trace) {
+  console.log('全局异常捕获')
   console.log(msg)
   console.log(vm)
   console.log(trace)
