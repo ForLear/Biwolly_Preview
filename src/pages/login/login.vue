@@ -1,27 +1,43 @@
 <template>
     <div>
-        <el-form :model="loginInfo" status-icon :rules="loginRules" ref="loginInfo" label-width="50px" class="login-form" v-show="formChange">
-            <div class="form-title">登陆</div>
-            <el-form-item class="login-form-item"  prop="username">
-                <el-input v-model="loginInfo.username" auto-complete="off" :placeholder="loginPlaceholder.user"></el-input>
-            </el-form-item>
-            <el-form-item class="login-form-item"  prop="password">
-                <el-input type="password" v-model="loginInfo.password" auto-complete="off" :placeholder="loginPlaceholder.pass"></el-input>
-            </el-form-item>
-            <el-form-item class="login-form-item">
-                <el-button class="login-form-button" type="primary" @click="submitForm('loginInfo')">登陆</el-button>
-            </el-form-item>
-            <div class="login-form-register">
-                没有账号?<span class="href-span" @click="go_register">来交易</span>
-            </div>
-        </el-form>
+        <transition name="fade">
+            <el-form class="login-form form-common" :model="loginInfo" status-icon :rules="loginRules" ref="loginInfo" label-width="50px" v-show="formChange">
+                <div class="form-title">登陆</div>
+                <el-form-item class="login-form-item"  prop="username">
+                    <el-input v-model="loginInfo.username" auto-complete="off" :placeholder="loginPlaceholder.user"></el-input>
+                </el-form-item>
+                <el-form-item class="login-form-item"  prop="password">
+                    <el-input type="password" v-model="loginInfo.password" auto-complete="off" :placeholder="loginPlaceholder.pass"></el-input>
+                </el-form-item>
+                <el-form-item class="login-form-item">
+                    <el-button class="login-form-button" type="primary" @click="submitForm('loginInfo')">登陆</el-button>
+                </el-form-item>
+                <div>
+                    没有账号?<span class="href-span" @click="change_form">来交易</span>
+                </div>
+            </el-form>
+        </transition>
 
-        <el-form >
-            <div class="form-title">注册</div>
-            <el-form-item class="login-form-item"  prop="username">
-                <el-input v-model="loginInfo.username" auto-complete="off" :placeholder="loginPlaceholder.user"></el-input>
-            </el-form-item>
-        </el-form>
+        <transition name="fade">
+            <el-form class="register-form form-common" :model="loginInfo" status-icon :rules="loginRules" ref="loginInfo" label-width="50px" v-show="!formChange">
+                <div class="form-title">注册</div>
+                <el-form-item class="login-form-item"  prop="username">
+                    <el-input v-model="loginInfo.username" auto-complete="off" :placeholder="loginPlaceholder.user"></el-input>
+                </el-form-item>
+                <el-form-item class="login-form-item"  prop="password">
+                    <el-input type="password" v-model="loginInfo.password" auto-complete="off" :placeholder="loginPlaceholder.pass"></el-input>
+                </el-form-item>
+                <el-form-item class="login-form-item"  prop="password">
+                    <el-input type="password" v-model="loginInfo.password" auto-complete="off" :placeholder="loginPlaceholder.pass"></el-input>
+                </el-form-item>
+                <el-form-item class="login-form-item">
+                    <el-button class="login-form-button" type="primary" @click="submitForm('loginInfo')">注册</el-button>
+                </el-form-item>
+                <div>
+                    没有账号?<span class="href-span" @click="change_form">来交易</span>
+                </div>
+            </el-form>
+        </transition>
     </div>
 </template>
 
@@ -66,7 +82,7 @@ export default {
             user:'请输入手机号或者邮箱',
             pass:'请输入密码'
         },
-        formChange:false
+        formChange:true
     };
   },
   computed: {},
@@ -88,8 +104,8 @@ export default {
             }
           });
       },
-      go_register(){
-          
+      change_form(){
+          this.formChange = !this.formChange
       }
   },
   created() {},
@@ -100,13 +116,13 @@ export default {
 <style lang='scss' scoped>
     $color-basic:#515151;
     
-    .login-form {
+     .form-common {
         color: $color-basic;
         width: 320px;
-        height: 280px;
+        height: auto;
+        max-height: 320px;
         background: #fff;
-        border-radius: 8px;
-        padding: 5px;
+        border-radius: 4px;
         text-align: center;
         padding:20px 0;
         position: absolute;
@@ -115,24 +131,36 @@ export default {
         bottom: 0;
         left: 0;
         margin: auto;   
-    }
-    
-    .form-title {
-        color: $color-basic;
-        font-size: 24px;
-        margin-bottom: 20px;
+     }
+     
+    .login-form {
+         
+        .form-title {
+            color: $color-basic;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-form-item {
+            margin-right: 50px;
+        }
+
+        .login-form-button {
+            width: 100%;
+        }
+
+        .href-span {
+            color: #007fff;
+            cursor: pointer;
+        }
     }
 
-    .login-form-item {
-        margin-right: 50px;
-    }
 
-    .login-form-button {
-        width: 100%;
-    }
 
-    .href-span {
-        color: #007fff;
-        cursor: pointer;
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
     }
 </style>
