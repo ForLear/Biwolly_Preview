@@ -19,7 +19,7 @@ export default {
   },
 
   mounted() {
-    // this.a()
+    this.a()
   },
 
   methods: {

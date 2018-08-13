@@ -16,7 +16,7 @@ export const login = function(params) {
   return ajax
     .post('/api/authorizations', params)
     .then((res) => {
-      console.log('login-', res)
+      // console.log('处理缓存token', res)
       setAuthInfo(res)
     })
 }

@@ -9,7 +9,7 @@ const CacheKeyOfAuth = '__CacheKeyOfAuth__'
 export const setAuthInfo = function(user) {
   if(!user) return
 
-  const userStr = JSON.parse(user)
+  const userStr = JSON.stringify(user)
   sessionStorage.setItem(CacheKeyOfAuth, userStr)
 }
 
@@ -21,7 +21,6 @@ export const clearAuthInfo = function() {
 /* 获取缓存信息 */
 export const getAuthInfo = function() {
   let user = sessionStorage.getItem(CacheKeyOfAuth)
-  console.log('user', user)
   /* JS短路表达式 */
   user = user && JSON.parse(user)
   return user
@@ -29,34 +28,35 @@ export const getAuthInfo = function() {
 
 /* 检查API响应情况 */
 const checkRespones = function(res) {
-  console.log('check', res)
+  console.log(res)
+  // const code = 0
   const code = res.ResultCode
   if(code === constant.ApiResultCodeNormal) {
     /* API响应正常 */
     return Promise.resolve(res)
   }
-  
+
   const error = new Error()
-  error.code = code
-  error.msg = res.ResultMessage
+  error.code = code || 1
+  error.msg = res.ResultMessage || '大兄弟什么都没有写'
   return Promise.reject(error)
 }
 
 /* API响应错误时 */
 const handleError = function(err) {
   /* 未登录 */
-  if (err.data && err.data.code === constant.ApiResultCodeNoLogin) {
+  if (err.code === constant.ApiResultCodeNoLogin) {
     console.log('尚未登录')
     VueRouter.push('/login')
     return
   }
   /* 其它逻辑错误 */
-  if (err.data && err.data.code > 0) {
+  if (err.code > 0) {
     /* 服务端错误信息 */
-    console.error('服务端:', err.data && err.data.msg || '未知')
+    console.error('服务端:', err.msg || '未知')
   } else {
     /* 客户端错误信息 */
-    console.error('客户端:', err.data && err.data.msg || '未知')
+    console.error('客户端:', err.msg || '未知')
   }
 }
 
