@@ -119,8 +119,12 @@ instance.interceptors.request.use((req) => {
 
 /* 响应请求拦截器钩子 */
 instance.interceptors.response.use((res) => {
-  const { data } = res
-  return checkRespones(data)
+  console.log(res)
+  const { data, status } = res
+  const back = {}
+  back.data = data
+  back.status = status
+  return checkRespones(back)
 }, (err) => {
   const Err = err
   err.code = 2000
