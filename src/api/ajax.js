@@ -39,27 +39,24 @@ const checkRespones = function(res) {
   const error = new Error()
   error.code = code
   error.msg = res.ResultMessage
-  return Promise.reject(res).catch((err) => {
-    console.log('API响应不正常是返回信息 Catch: ', err)
-  })
+  return Promise.reject(error)
 }
 
 /* API响应错误时 */
 const handleError = function(err) {
   /* 未登录 */
-  if(err.code === constant.ApiResultCodeNoLogin) {
+  if (err.data && err.data.code === constant.ApiResultCodeNoLogin) {
     console.log('尚未登录')
     VueRouter.push('/login')
     return
   }
-
   /* 其它逻辑错误 */
-  if(err.code > 0) {
+  if (err.data && err.data.code > 0) {
     /* 服务端错误信息 */
-    console.log('服务端:\n', err.msg || '未知')
+    console.error('服务端:', err.data && err.data.msg || '未知')
   } else {
     /* 客户端错误信息 */
-    console.log('客户端:\n', err.msg || '未知')
+    console.error('客户端:', err.data && err.data.msg || '未知')
   }
 }
 
