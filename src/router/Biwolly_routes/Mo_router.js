@@ -1,23 +1,27 @@
-const Home = () => import('@/pages/home')
+const DocNav = () => import('@/pages/docNav')
 
 const Doc = () => import('@/pages/homePage/doc')
+const Test = () => import('@/pages/test/test')
 
 
 const routes = [
   {
-    path: '/Doc',
-    name: 'Doc',
-    component: Doc,
+    path: '/Test',
+    name: 'Test',
+    component: Test,
+  },
+  {
+    path: '/',
+    name: '',
+    component: DocNav,
+    children: [
+      {
+        path: '/Doc',
+        name: 'Doc',
+        component: Doc,
+      },
+    ],
   },
 ]
 
-const route = {
-  path: '/',
-  name: '',
-  component: Home,
-  children: [],
-}
-
-route.children.push(...routes)
-
-export default route
+export default routes
