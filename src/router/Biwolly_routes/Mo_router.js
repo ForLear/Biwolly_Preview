@@ -5,11 +5,6 @@ const Test = () => import('@/pages/test/test')
 
 const routes = [
   {
-    path: '/Test',
-    name: 'Test',
-    component: Test,
-  },
-  {
     path: '/',
     name: '',
     component: DocNav,

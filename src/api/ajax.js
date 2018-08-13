@@ -21,6 +21,7 @@ export const clearAuthInfo = function() {
 /* 获取缓存信息 */
 export const getAuthInfo = function() {
   let user = sessionStorage.getItem(CacheKeyOfAuth)
+  console.log('user', user)
   /* JS短路表达式 */
   user = user && JSON.parse(user)
   return user
@@ -28,6 +29,7 @@ export const getAuthInfo = function() {
 
 /* 检查API响应情况 */
 const checkRespones = function(res) {
+  console.log('check', res)
   const code = res.ResultCode
   if(code === constant.ApiResultCodeNormal) {
     /* API响应正常 */
@@ -37,7 +39,9 @@ const checkRespones = function(res) {
   const error = new Error()
   error.code = code
   error.msg = res.ResultMessage
-  return Promise.reject(res)
+  return Promise.reject(res).catch((err) => {
+    console.log('API响应不正常是返回信息 Catch: ', err)
+  })
 }
 
 /* API响应错误时 */
@@ -119,7 +123,6 @@ instance.interceptors.request.use((req) => {
 
 /* 响应请求拦截器钩子 */
 instance.interceptors.response.use((res) => {
-  console.log(res)
   const { data, status } = res
   const back = {}
   back.data = data
@@ -127,6 +130,7 @@ instance.interceptors.response.use((res) => {
   return checkRespones(back)
 }, (err) => {
   const Err = err
+  console.log(Err)
   err.code = 2000
   err.msg = '你掉网了大兄弟'
   return Promise.reject(Err)

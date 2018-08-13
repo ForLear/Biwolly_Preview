@@ -1,6 +1,5 @@
 <template>
   <section :class="$style.place">
-    <el-button type="primary">123</el-button>
   </section>
 </template>
 
@@ -20,7 +19,7 @@ export default {
   },
 
   mounted() {
-    this.a()
+    // this.a()
   },
 
   methods: {

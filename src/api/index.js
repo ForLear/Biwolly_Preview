@@ -16,6 +16,7 @@ export const login = function(params) {
   return ajax
     .post('/api/authorizations', params)
     .then((res) => {
-      return ajax.checkResp(res)
+      console.log('login-', res)
+      setAuthInfo(res)
     })
 }
