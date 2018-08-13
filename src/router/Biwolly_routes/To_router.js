@@ -1,22 +1,24 @@
-import Home from '@/pages/home'   
-
-import Doc from '@/pages/homePage/doc'
+const DocNav = () => import('@/pages/docNav')
+const login = () => import('@/pages/login/login')
+const register = () => import('@/pages/login/register')
 
 const routes = [
   {
-    path: '/Doc',
-    name: 'Doc',
-    component: Doc,
+    path: '/login',
+    name: 'login',
+    component: login,
   },
+  {
+    path: '/register',
+    name: 'register',
+    component: register,
+  },
+  {
+    path: '/',
+    name: '',
+    component: DocNav,
+    children: [],
+  }
 ]
 
-const route = {
-  path: '/',
-  name: '',
-  component: Home,
-  children: [],
-}
-
-route.children.push(...routes)
-
-export default route
+export default routes
