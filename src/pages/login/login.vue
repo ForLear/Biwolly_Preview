@@ -2,10 +2,10 @@
     <div>
         <el-form :model="loginInfo" status-icon :rules="loginRules" ref="loginInfo" label-width="50px" class="login-form" v-show="formChange">
             <div class="form-title">登陆</div>
-            <el-form-item class="login-form-item"  prop="username">
+            <el-form-item class="login-form-item" prop="username">
                 <el-input v-model="loginInfo.username" auto-complete="off" :placeholder="loginPlaceholder.user"></el-input>
             </el-form-item>
-            <el-form-item class="login-form-item"  prop="password">
+            <el-form-item class="login-form-item" prop="password">
                 <el-input type="password" v-model="loginInfo.password" auto-complete="off" :placeholder="loginPlaceholder.pass"></el-input>
             </el-form-item>
             <el-form-item class="login-form-item">
@@ -18,7 +18,7 @@
 
         <el-form >
             <div class="form-title">注册</div>
-            <el-form-item class="login-form-item"  prop="username">
+            <el-form-item class="login-form-item" prop="username">
                 <el-input v-model="loginInfo.username" auto-complete="off" :placeholder="loginPlaceholder.user"></el-input>
             </el-form-item>
         </el-form>
@@ -31,9 +31,7 @@ import { login , handleErr } from "@/api";
 
 export default {
   data() {
-
     var userRules = (rule, value, callback) => {
-
         if (!value) {
             return callback(new Error('账号不能为空'));
         }else{
@@ -92,8 +90,6 @@ export default {
           
       }
   },
-  created() {},
-  mounted() {}
 };
 </script>
 

@@ -18,7 +18,7 @@ export default {
   computed: {
   },
 
-  mounted() {
+  created() {
     this.a()
   },
 
@@ -34,7 +34,7 @@ export default {
         handleErr(err)
       }
     }
-  }
+  },
 }
 </script>
 
