@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <section>
         <transition name="fade">
             <el-form class="login-form form-common" :model="loginInfo" status-icon :rules="inputRules" ref="loginInfo" label-width="50px" v-if="formChange">
                 <div class="form-title">登陆</div>
-                <el-form-item class="form-item"  prop="username">
+                <el-form-item class="form-item" prop="username">
                     <el-input v-model="loginInfo.username" auto-complete="off" :placeholder="formPlaceholder.loginUser"></el-input>
                 </el-form-item>
-                <el-form-item class="form-item"  prop="password">
+                <el-form-item class="form-item" prop="password">
                     <el-input type="password" v-model="loginInfo.password" auto-complete="off" :placeholder="formPlaceholder.loginPass"></el-input>
                 </el-form-item>
                 <el-form-item class="form-item">
@@ -21,13 +21,13 @@
         <transition name="fade">
             <el-form class="register-form form-common" :model="registerInfo" status-icon :rules="inputRules" ref="loginInfo" label-width="50px" v-if="!formChange">
                 <div class="form-title">注册</div>
-                <el-form-item class="form-item"  prop="username">
+                <el-form-item class="form-item" prop="username">
                     <el-input v-model="registerInfo.username" auto-complete="off" :placeholder="formPlaceholder.registerUser"></el-input>
                 </el-form-item>
-                <el-form-item class="form-item"  prop="phone">
+                <el-form-item class="form-item" prop="phone">
                     <el-input v-model="registerInfo.phone" auto-complete="off" :placeholder="formPlaceholder.registerPhone"></el-input>
                 </el-form-item>
-                <el-form-item class="form-item"  prop="password">
+                <el-form-item class="form-item" prop="password">
                     <el-input type="password" v-model="registerInfo.password" auto-complete="off" :placeholder="formPlaceholder.registerPass"></el-input>
                 </el-form-item>
                 <el-form-item class="form-item">
@@ -38,7 +38,7 @@
                 </div>
             </el-form>
         </transition>
-    </div>
+    </section>
 </template>
 
 <script>

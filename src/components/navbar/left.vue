@@ -11,7 +11,7 @@
       <router-link to="/Utils">
         <dl :class="$style.item">组件库</dl>
       </router-link>
-      <dl :class="$style.item">吧啦吧啦</dl>
+      <dl :class="$style.item">算法</dl>
       <a :href="down">
         <dl :class="$style.item">
             <i :class="$style.icon_phone"></i>

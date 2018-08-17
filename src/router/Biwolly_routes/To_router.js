@@ -1,11 +1,17 @@
 const DocNav = () => import('@/pages/docNav')
 const login = () => import('@/pages/login/login')
+const algorithm = () => import('@/pages/algorithm/algorithm')
 
 const routes = [
   {
     path: '/login',
     name: 'login',
     component: login,
+  },
+  {
+    path: '/algorithm',
+    name: 'algorithm',
+    component: algorithm
   },
   {
     path: '/',
