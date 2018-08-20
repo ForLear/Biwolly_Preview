@@ -7,7 +7,7 @@
           主站
         </dl>
       </router-link>
-      <dl :class="$style.item">蕉友</dl>
+      <dl :class="$style.item">算法</dl>
       <router-link to="/Utils">
         <dl :class="$style.item">组件库</dl>
       </router-link>

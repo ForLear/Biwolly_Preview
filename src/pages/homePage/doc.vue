@@ -1,5 +1,7 @@
 <template>
-  <section :class="$style.place">
+  <section :class="$style.content">
+    <div :class="$style.place">
+    </div>
   </section>
 </template>
 
@@ -19,7 +21,7 @@ export default {
   },
 
   created() {
-    this.a()
+    // this.a()
   },
 
   methods: {
@@ -40,10 +42,14 @@ export default {
 
 <style lang="scss" module>
   @import '@/common/css/element.scss';
-  .place {
+  .content {
     width: 100%;
-    height: 300px;
-    padding-top: 42px;
-    background: linear-gradient(#68e9b5, #ecf2f3);
+    height: 100%;
+    background-color: #fff;
+    .place {
+      height: 300px;
+      padding-top: 42px;
+      background: linear-gradient(#68e9b5, #ffffff);
+    }
   }
 </style>
