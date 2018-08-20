@@ -22,7 +22,6 @@ export default {
 
   created() {
     // this.login()
-    this.test()
   },
 
   methods: {
@@ -38,12 +37,6 @@ export default {
         handleErr(err)
       }
     },
-
-    test() {
-      console.log(require.ensure([], () => {
-        console.log(12345)
-      }))
-    }
   },
 }
 </script>
