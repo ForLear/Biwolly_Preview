@@ -5,7 +5,7 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import { register, login, handleErr } from '@/api'
 export default {
   name: 'doc',
@@ -21,7 +21,7 @@ export default {
   },
 
   created() {
-    // this.login()
+    this.login()
   },
 
   methods: {
