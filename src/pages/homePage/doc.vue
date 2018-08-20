@@ -21,11 +21,13 @@ export default {
   },
 
   created() {
-    // this.a()
+    // this.login()
+    this.test()
   },
 
   methods: {
-    async a() {
+    /* 登录测试 */
+    async login() {
       try {
         let params = {
           email: '88888881@qq.com',
@@ -35,6 +37,12 @@ export default {
       } catch(err) {
         handleErr(err)
       }
+    },
+
+    test() {
+      console.log(require.ensure([], () => {
+        console.log(12345)
+      }))
     }
   },
 }
