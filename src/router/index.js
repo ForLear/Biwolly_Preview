@@ -28,9 +28,9 @@ const base = [
 
 const router = new Router({
   /* vue-router两种模式: hash, history */
-  mode: 'history',
+  // mode: 'history',
   linkActiveClass: 'active',
-  history: false,
+  // history: false,
   routes: base,
 })
 
