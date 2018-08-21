@@ -28,7 +28,7 @@ export const getAuthInfo = function() {
 
 /* 检查API响应情况 */
 const checkRespones = function(res) {
-  console.log(res)
+  console.log('API响应: ', res)
   // const code = 0
   const code = res.ResultCode
   if(code === constant.ApiResultCodeNormal) {
@@ -38,7 +38,7 @@ const checkRespones = function(res) {
 
   const error = new Error()
   error.code = code || 1
-  error.msg = res.ResultMessage || '大兄弟什么都没有写'
+  error.msg = res.ResultMessage || '大兄弟不但什么都没写,连0都没有返回'
   return Promise.reject(error)
 }
 
@@ -104,7 +104,6 @@ instance.cancel = function(message) {
 instance.interceptors.request.use((req) => {
   const Req = req || {}
   // const { data } = Req
-
   /* 封装已经认证的信息 */
   const auto = getAuthInfo()
   if(auto) {
@@ -120,16 +119,20 @@ instance.interceptors.request.use((req) => {
 
 /* 响应请求拦截器钩子 */
 instance.interceptors.response.use((res) => {
+  // console.log('拦截器钩子获取参数: ', res)
   const { data, status } = res
+  
   const back = {}
   back.data = data
   back.status = status
   return checkRespones(back)
 }, (err) => {
   const Err = err
-  console.log(Err)
-  err.code = 2000
-  err.msg = '你掉网了大兄弟'
+  // console.log('拦截器钩子获取错误: ', err.response)
+
+  /* 抛出错误 */
+  err.code = err.response.data.ResultCode || 2000
+  err.msg = err.response.data.ResultMessage || '你掉网了大兄弟'
   return Promise.reject(Err)
 })
 

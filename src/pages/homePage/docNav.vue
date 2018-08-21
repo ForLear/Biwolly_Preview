@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Navbar from '@/components/navbar/navbar'
+import Navbar from '@/pages/homePage/navbar/navbar'
 export default {
   name: 'doc-nav',
   components: {

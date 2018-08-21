@@ -24,7 +24,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #ECF2F3;
+  background-color: #FFF;
   font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
 }
 </style>

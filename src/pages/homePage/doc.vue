@@ -1,9 +1,11 @@
 <template>
-  <section :class="$style.place">
+  <section :class="$style.content">
+    <div :class="$style.place">
+    </div>
   </section>
 </template>
 
-<script>
+<script lang="ts">
 import { register, login, handleErr } from '@/api'
 export default {
   name: 'doc',
@@ -19,11 +21,12 @@ export default {
   },
 
   created() {
-    this.a()
+    // this.login()
   },
 
   methods: {
-    async a() {
+    /* 登录测试 */
+    async login() {
       try {
         let params = {
           email: '88888881@qq.com',
@@ -33,17 +36,21 @@ export default {
       } catch(err) {
         handleErr(err)
       }
-    }
+    },
   },
 }
 </script>
 
 <style lang="scss" module>
   @import '@/common/css/element.scss';
-  .place {
+  .content {
     width: 100%;
-    height: 300px;
-    padding-top: 42px;
-    background: linear-gradient(#68e9b5, #ecf2f3);
+    height: 100%;
+    background-color: #fff;
+    .place {
+      height: 300px;
+      padding-top: 42px;
+      background: linear-gradient(#68e9b5, #ffffff);
+    }
   }
 </style>
