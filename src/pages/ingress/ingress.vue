@@ -1,12 +1,14 @@
 <template>
-  <div class="component_name">
-    123
-  </div>
+  <section :class="$style.ingress">
+    <div>
+
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'component_name',
+  name: 'ingress',
 
   props: {},
 
@@ -28,4 +30,8 @@ export default {
 </script>
 
 <style lang="scss" module>
+  .ingress {
+    height: 100%;
+    background-color: #FFF;
+  }
 </style>
