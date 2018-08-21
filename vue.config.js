@@ -1,9 +1,9 @@
 /* vue-cli 3.0  vue.config.js配置 */
 
 /* 测试环境 */
-const BaseTest = '/'
+const BaseTest = './'
 /* 正式环境 */
-const BaseDevp = '/'
+const BaseDevp = './'
 
 const outputDevp = 'dist_test'
 const outputProd = 'dist_prod'
