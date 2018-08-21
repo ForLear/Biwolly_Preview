@@ -27,16 +27,6 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src'))
-    // config.plugins.delete('fork-ts-checker')
-    // config.module
-    //   .rule('ts')
-    //   .use('ts-loader')
-    //   .tap(options => {
-    //     return {
-    //       ...options,
-    //       'transpileOnly': false
-    //     }
-    //   })
   },
 
   /* PWA相关 */
