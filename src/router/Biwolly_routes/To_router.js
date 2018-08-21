@@ -1,4 +1,4 @@
-const DocNav = () => import('@/pages/docNav')
+const DocNav = () => import('@/pages/homePage/docNav')
 const login = () => import('@/pages/login/login')
 const algorithm = () => import('@/pages/algorithm/algorithm')
 

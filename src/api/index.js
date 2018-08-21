@@ -3,20 +3,13 @@ import { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr, ajax } f
 export { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr }
 
 /* 注册 */
-export const register = function(params) {
-  return ajax
+export const register = params => 
+  ajax
     .post('/api/users', params)
-    .then((res) => {
-      return ajax.checkResp(res) 
-    })
-}
+    .then(res => ajax.checkResp(res))
 
 /* 登录 */
-export const login = function(params) {
-  return ajax
+export const login = params =>
+  ajax
     .post('/api/authorizations', params)
-    .then((res) => {
-      // console.log('处理缓存token', res)
-      setAuthInfo(res)
-    })
-}
+    .then(res => setAuthInfo(res))
