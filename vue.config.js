@@ -33,7 +33,7 @@ module.exports = {
   pwa: {},
 
   /* 用于嵌套生成的静态资产（js，css，img，fonts）的目录 */
-  assetsDir: 'static',
+  // assetsDir: 'static',
 
   /* 以多页模式构建应用程序使用到 */
   // page: undefined,
