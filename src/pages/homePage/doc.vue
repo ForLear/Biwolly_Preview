@@ -9,9 +9,6 @@
 import { register, login, handleErr } from '@/api'
 export default {
   name: 'doc',
-
-  props: {},
-
   data() {
     return {
     }

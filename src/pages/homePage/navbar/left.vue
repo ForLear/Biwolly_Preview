@@ -28,18 +28,18 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        down: '#',
-      }
-    },
-    created() {
-    },
-    methods: {
-      
-    },
-  }
+export default {
+  data() {
+    return {
+      down: '#',
+    }
+  },
+  created() {
+  },
+  methods: {
+    
+  },
+}
 </script>
 
 <style lang='scss' module>

@@ -6,9 +6,6 @@
 <script>
 export default {
   name: 'balabala',
-
-  props: {},
-
   data() {
     return {
     }
@@ -22,7 +19,6 @@ export default {
 
   methods: {
   },
-
 }
 </script>
 

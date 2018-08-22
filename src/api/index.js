@@ -13,3 +13,4 @@ export const login = params =>
   ajax
     .post('/api/authorizations', params)
     .then(res => setAuthInfo(res))
+    

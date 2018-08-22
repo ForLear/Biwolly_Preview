@@ -15,6 +15,6 @@ module.exports = {
   /* 请求错误 */
   ApiResultCodeServerErr: 10000,
 
-  /* 客户端处理信息 ========== 状态码 < 0 */
+  /* 客户端处理信息 状态码 < 0 */
   ApiHandleCodeClientErr: -99999,
 }
