@@ -18,7 +18,7 @@ function resolve (dir) {
 
 module.exports = {
   /* 基本路径 */
-  baseUrl: IsProd ? BaseDevp : BaseTest,
+  baseUrl: './',
   
   /* 输出文件路径 */
   outputDir: IsProd ? outputProd : outputDevp,
