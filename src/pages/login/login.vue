@@ -53,12 +53,15 @@ export default {
         if (!value) {
             return callback(new Error('账号不能为空'));
         }
+
+        callback();
     };
 
     var passRules = (rule, value, callback) => {
         if (!value) {
             return callback(new Error('密码不能为空'));
         }
+        callback();
     };
 
     var phoneRules = (rule, value, callback) => {
@@ -108,7 +111,9 @@ export default {
   methods: {
       submitForm(formName){
           this.$refs[formName].validate((valid) => {
+              console.log(valid)
             if (valid) {
+                console.log('here')
                 login(this.loginInfo).then(res=>{
                     console.log(res)
                 }).catch(err => {
