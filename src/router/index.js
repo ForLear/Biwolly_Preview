@@ -37,12 +37,12 @@ const router = new Router({
 /* 路由监听 */
 router.beforeEach((to, from, next) => {
   /* 验证登录信息等 */
-  if(to.path === '/doc') {
+  if(to.path === '/fans') {
     next()
   }
 
   if(to.path === '/') {
-    next({ path: '/doc' })
+    next({ path: '/fans' })
   }
   next()
 })
