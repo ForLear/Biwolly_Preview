@@ -1,8 +1,17 @@
 <template>
   <section :class="$style.center">
-    <h1>惊险刺激的华南分部</h1>
-    <h3>傻逼网友展示</h3>
-    <div :class="$style.bigBro"></div>
+    <!-- Navbar -->
+    <article>
+      <h1>傻逼网友展示</h1>
+      <div :class="$style.one"></div>
+      <div :class="$style.two"></div>
+      <div :class="$style.three"></div>
+      <div :class="$style.fuor"></div>
+      <div :class="$style.five"></div>
+      <div :class="$style.bigBro"></div>
+    </article>
+
+    
   </section>
 </template>
 
@@ -31,6 +40,7 @@ export default {
 
 <style lang="scss" module>
 .center {
+  margin: 56px 0 0 0;
   text-align: center;
   .bigBro {
     width: 400px;
@@ -66,6 +76,13 @@ export default {
     margin: 0 auto;
     display: inline-block;
     background: url(@/common/triopen/网友4.png) no-repeat;
+  }
+  .five {
+    width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    display: inline-block;
+    background: url(@/common/triopen/网友5.png) no-repeat;
   }
 }
 </style>
