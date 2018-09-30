@@ -30,19 +30,19 @@ const router = new Router({
   /* vue-router两种模式: hash, history */
   // mode: 'history',
   linkActiveClass: 'active',
-  // history: false,
+  history: false,
   routes: base,
 })
 
 /* 路由监听 */
 router.beforeEach((to, from, next) => {
   /* 验证登录信息等 */
-  if(to.path === '/doc') {
+  if (to.path === '/show') {
     next()
   }
 
   if(to.path === '/') {
-    next({ path: '/doc' })
+    next({ path: '/show' })
   }
   next()
 })

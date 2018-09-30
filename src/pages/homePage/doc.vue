@@ -7,11 +7,9 @@
 
 <script lang="ts">
 import { register, login, handleErr } from '@/api'
+import { mapMutations, mapGetters } from 'vuex'
 export default {
   name: 'doc',
-
-  props: {},
-
   data() {
     return {
     }
@@ -21,7 +19,10 @@ export default {
   },
 
   created() {
-    // this.login()
+    this.login()
+  },
+
+  mounted() {
   },
 
   methods: {

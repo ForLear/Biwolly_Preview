@@ -6,10 +6,11 @@ export { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr }
 export const register = params => 
   ajax
     .post('/api/users', params)
-    .then(res => ajax.checkResp(res))
+    .then(res => checkResp(res))
 
 /* 登录 */
 export const login = params =>
   ajax
     .post('/api/authorizations', params)
     .then(res => setAuthInfo(res))
+    

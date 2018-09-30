@@ -8,14 +8,14 @@
 </template>
 
 <script>
-  import Left from './left'
-  import Right from './right'
-  export default {
-    components: {
-      Left,
-      Right,
-    }
+import Left from './left'
+import Right from './right'
+export default {
+  components: {
+    Left,
+    Right,
   }
+}
 </script>
 
 <style lang='scss' module>

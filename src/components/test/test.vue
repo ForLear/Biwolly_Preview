@@ -1,11 +1,18 @@
 <template>
-  <div class="balabala">
-  </div>
+  <el-button>{{name}}</el-button>
 </template>
 
 <script>
 export default {
-  name: 'balabala',
+  name: 'component_name',
+
+  props: {
+    name: {
+      type: String,
+      default: '没有名字',
+    }
+  },
+
   data() {
     return {
     }
@@ -19,6 +26,7 @@ export default {
 
   methods: {
   },
+
 }
 </script>
 

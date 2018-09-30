@@ -119,7 +119,7 @@ instance.interceptors.request.use((req) => {
 
 /* 响应请求拦截器钩子 */
 instance.interceptors.response.use((res) => {
-  // console.log('拦截器钩子获取参数: ', res)
+  console.log('拦截器钩子获取参数: ', res)
   const { data, status } = res
   
   const back = {}
@@ -128,7 +128,7 @@ instance.interceptors.response.use((res) => {
   return checkRespones(back)
 }, (err) => {
   const Err = err
-  // console.log('拦截器钩子获取错误: ', err.response)
+  console.log('拦截器钩子获取错误: ', err.response)
 
   /* 抛出错误 */
   err.code = err.response.data.ResultCode || 2000

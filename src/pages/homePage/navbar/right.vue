@@ -25,26 +25,26 @@
 </template>
 
 <script>
-  import UserInfo from './userinfo'
-  import Web from './web'
-  export default {
-    components: {
-      UserInfo,
-      Web,
-    },
-    data () {
-      return {
-        photo: '',
-        name: '',
-        id: '',
-      };
-    },
-    created() {
-    },
-    methods: {
-      
-    }
+import UserInfo from './userinfo'
+import Web from './web'
+export default {
+  components: {
+    UserInfo,
+    Web,
+  },
+  data () {
+    return {
+      photo: '',
+      name: '',
+      id: '',
+    };
+  },
+  created() {
+  },
+  methods: {
+    
   }
+}
 </script>
 
 <style lang='scss' module>
