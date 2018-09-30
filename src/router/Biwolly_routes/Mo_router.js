@@ -1,9 +1,11 @@
 /* 北斗华南粉丝部专用 */
 
 // 顶部导航
+const I_Header = () => import('@/pages/triopen/home/header/i_header')
+const Home = () => import('@/pages/triopen/home/home')
+
 const T_Header = () => import('@/pages/triopen/header/t_header')
 
-const TriopenIndex = () => import('@/pages/triopen/index')
 const Triopen = () => import('@/pages/triopen/triopen')
 /* 北斗华南粉丝部专用 */
 
@@ -27,13 +29,20 @@ const routes = [
   {
     path: '/',
     name: '',
-    component: T_Header,
+    component: I_Header,
     children: [
       {
-        path: '/Fans',
-        name: 'TriopenIndex',
-        component: TriopenIndex,
-      },
+        path: '/show',
+        name: 'home',
+        component: Home,
+      }
+    ]
+  },
+  {
+    path: '/',
+    name: '',
+    component: T_Header,
+    children: [
       {
         path: '/beidoudou',
         name: 'Triopen',
