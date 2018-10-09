@@ -18,11 +18,13 @@
       <router-link to="/Balabala">
         <dl :class="$style.item">test</dl>
       </router-link>
-      <a :href="down">
+      <!-- <a :href="down"> -->
+      <router-link to="/fans">
         <dl :class="$style.item">
           加入♂我们
         </dl>
-      </a>
+      </router-link>
+      <!-- </a> -->
       <div :class="$style.ShowCode">
         <div :class="$style.QQ">
           <img :class="$style.QRCode" src="@/common/triopen/Code.png" alt="北斗华南粉丝群二维码">
@@ -36,7 +38,7 @@
   export default {
     data() {
       return {
-        down: '/dist_test/#/fans',
+        down: '/#/fans',
       }
     },
     created() {
@@ -105,7 +107,7 @@
       margin-top: 10px;
       margin-left: 325px;
       text-align: center;
-      background: rgba(255, 255, 255, 1);
+      background: rgba(255, 255, 255, .8);
       box-shadow: 0 8px 20px 0 rgba(36,33,46,0.12);
       border-radius: 0 0 8px 8px;
       transition: all .5s;
