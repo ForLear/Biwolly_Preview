@@ -37,7 +37,7 @@ const checkRespones = function(res) {
   }
 
   const error = new Error()
-  error.code = code || 1
+  error.code = code
   error.msg = res.ResultMessage || '大兄弟不但什么都没写,连0都没有返回'
   return Promise.reject(error)
 }
