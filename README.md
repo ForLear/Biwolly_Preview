@@ -1,5 +1,4 @@
 # 比利小队
-https://user.mihoyo.com/#/emailBackVerify?encode=0a0012156f732d77616e6774303031407168696e732e636f6d1a0635373738363420e6a3d20f2a0c7665726966795f656d61696c&sign=5ea98d12339a433f85b74fee64fb7d72a527c9d0f52adcd2a2095f8d2abae875
 ## Project setup
 ```
 npm install
