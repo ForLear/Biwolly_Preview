@@ -12,7 +12,6 @@ const Triopen = () => import('@/pages/triopen/triopen')
 const DocNav = () => import('@/pages/homePage/docNav')
 
 const Doc = () => import('@/pages/homePage/doc')
-const Sli = () => import('@/pages/homePage/sliderTest')
 const Ingress = () => import('@/pages/ingress/ingress')
 const Balabala = () => import('@/pages/balabala/index')
 
@@ -60,11 +59,6 @@ const routes = [
         path: '/Doc',
         name: 'Doc',
         component: Doc,
-      },
-      {
-        path: '/Sli',
-        name: 'Sli',
-        component: Sli,
       },
     ],
   },
