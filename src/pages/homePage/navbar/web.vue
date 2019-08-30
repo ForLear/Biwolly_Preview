@@ -2,23 +2,23 @@
   <ul :class="$style.web_ui">
     <li>
       <div :class="$style.batman"></div>
-      <span>-BAT·王-</span>
+      <span>莫其咯</span>
     </li>
     <li>
       <div :class="$style.fatman"></div>
-      <span>胡 · 香蕉</span>
+      <span>一带哟</span>
     </li>
     <router-link tag="li" to="/">
       <div :class="$style.sick"></div>
-      <span>吴 · 木吉</span>
+      <span>马萨卡</span>
     </router-link>
     <li>
       <div :class="$style.glass"></div>
-      <span>白 · Van樣</span>
+      <span>哄冻泥?</span>
     </li>
     <li>
       <div :class="$style.man"></div>
-      <span>海灵顿 · 肖</span>
+      <span>哄豆哒</span>
     </li>
   </ul>
 </template>

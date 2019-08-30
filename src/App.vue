@@ -26,6 +26,7 @@ body {
   left: 0;
   right: 0;
   background-color: #FFF;
-  font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+  /* font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif; */
+  font: 12px PingFangSC-Regular, sans-serif
 }
 </style>
