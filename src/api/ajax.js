@@ -2,38 +2,48 @@ import VueRouter from 'vue-router'
 import * as Axios from 'axios'
 import constant from '@/constant'
 
+const baseURL = ''
+
 /* 缓存信息 */
 const CacheKeyOfAuth = '__CacheKeyOfAuth__'
 
 /* 保存缓存信息 */
-export const setAuthInfo = function(user) {
-  if(!user) return
+export const setAuthInfo = user => {
+  if (!user) return
 
   const userStr = JSON.stringify(user)
   sessionStorage.setItem(CacheKeyOfAuth, userStr)
 }
 
 /* 清空缓存信息 */
-export const clearAuthInfo = function() {
+export const clearAuthInfo = () => {
   sessionStorage.setItem(CacheKeyOfAuth, null)
 }
 
 /* 获取缓存信息 */
-export const getAuthInfo = function() {
+export const getAuthInfo = () => {
   let user = sessionStorage.getItem(CacheKeyOfAuth)
   /* JS短路表达式 */
   user = user && JSON.parse(user)
   return user
 }
 
+/* 封装try/catch */
+const awaitWrap = promise => {
+  return promise
+    .then(data => [data, null])
+    .catch(err => [null, handleErr(err)])
+}
+
 /* 检查API响应情况 */
-const checkRespones = function(res) {
-  console.log('API响应: ', res)
-  // const code = 0
+const checkRespones = (res, msg) => {
+  // console.log('API响应: ', res)
+  const data = msg ? res.meta : res
   const code = res.ResultCode
-  if(code === constant.ApiResultCodeNormal) {
+  /* code判断拦截器中请求状态, msg为undefined表示成功发送请求, 返回数据 */
+  if (code === constant.ApiResultCodeNormal || msg === undefined) {
     /* API响应正常 */
-    return Promise.resolve(res)
+    return Promise.resolve(data)
   }
 
   const error = new Error()
@@ -43,7 +53,8 @@ const checkRespones = function(res) {
 }
 
 /* API响应错误时 */
-const handleError = function(err) {
+const handleError = err => {
+  // console.log(err)
   /* 未登录 */
   if (err.code === constant.ApiResultCodeNoLogin) {
     console.log('尚未登录')
@@ -64,7 +75,7 @@ const handleError = function(err) {
 let controller = null
 
 /* 停止回调 */
-const stopCallback = function(cancel) {
+const stopCallback = cancel => {
   controller = cancel
 }
 
@@ -75,18 +86,23 @@ const instance = Axios.create({
 
   /* API地址 */
   baseURL: constant.ApiBasePath,
+  // baseURL: baseURL,
 
   /* 请求超时 */
   timeout: constant.ApiMaxResponseTime,
 
   /* 请求格式 */
   contentType: 'application/json;charset=UTF-8',
+  /* 表单请求格式 */
+  /* headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  }, */
 
   /* 请求格式 */
   responseType: 'json',
 
   /* 数据上传回调 */
-  upload() {
+  upload () {
   },
 
   /* 干掉指定token */
@@ -94,19 +110,18 @@ const instance = Axios.create({
 })
 
 /* 停止回调方法关联到axios实例中 */
-instance.cancel = function(message) {
-  if (controller) {
-    controller(message)
-  }
+instance.cancel = msg => {
+  if (controller) controller(msg)
 }
 
-/* 请求拦截器 */
-instance.interceptors.request.use((req) => {
+/* 请求拦截器: 发送请求之前 */
+instance.interceptors.request.use(req => {
+  // console.log('请求拦截器: ', req)
   const Req = req || {}
   // const { data } = Req
   /* 封装已经认证的信息 */
   const auto = getAuthInfo()
-  if(auto) {
+  if (auto) {
     const userInfo = `${auto.token_type} ${auto.assets_token}`
     Req.headers.Authorization = userInfo
   }
@@ -117,18 +132,19 @@ instance.interceptors.request.use((req) => {
   return Promise.reject(Err)
 })
 
-/* 响应请求拦截器钩子 */
-instance.interceptors.response.use((res) => {
-  console.log('拦截器钩子获取参数: ', res)
+/* 响应请求拦截器钩子: 在接口函数发送请求前 */
+instance.interceptors.response.use(res => {
+  // console.log('拦截器钩子获取参数: ', res)
+  /* 解构赋值, 取res.data和res.status */
   const { data, status } = res
-  
+
   const back = {}
   back.data = data
   back.status = status
-  return checkRespones(back)
+  return checkRespones(data, '拦截器')
 }, (err) => {
   const Err = err
-  console.log('拦截器钩子获取错误: ', err.response)
+  // console.log('拦截器钩子获取错误: ', err.response)
 
   /* 抛出错误 */
   err.code = err.response.data.ResultCode || 2000
@@ -139,5 +155,7 @@ instance.interceptors.response.use((res) => {
 export const handleErr = handleError
 
 export const checkResp = checkRespones
+
+export const wrap = awaitWrap
 
 export const ajax = instance

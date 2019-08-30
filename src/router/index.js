@@ -36,15 +36,21 @@ const router = new Router({
 
 /* 路由监听 */
 router.beforeEach((to, from, next) => {
+  const loginInfo = JSON.parse(sessionStorage.getItem('loginInfo'))
   /* 验证登录信息等 */
-  if (to.path === '/show') {
-    next()
+  if(to.path !== '/login') {
+    if(loginInfo && loginInfo.access_token) {
+      next()
+    } else {
+      next({ path: '/login' })
+    }
+  } else {
+    if(loginInfo && loginInfo.access_token) {
+      next({ path: '/' })
+    } else {
+      next()
+    }
   }
-
-  if(to.path === '/') {
-    next({ path: '/show' })
-  }
-  next()
 })
 
 export default router

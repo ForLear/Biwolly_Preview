@@ -1,6 +1,6 @@
-import { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr, ajax } from './ajax'
+import { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr, wrap, ajax } from './ajax'
 
-export { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr }
+export { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr, wrap }
 
 /* 注册 */
 export const register = params => 
@@ -12,5 +12,5 @@ export const register = params =>
 export const login = params =>
   ajax
     .post('/api/authorizations', params)
-    .then(res => setAuthInfo(res))
+    .then(res => checkResp(res))
     
