@@ -7,7 +7,7 @@ module.exports = {
   ApiMaxResponseTime: 3e4,
 
   /* 请求返回正常 */
-  ApiResultCodeNormal: 0,
+  ApiResultCodeNormal: 200,
 
   /* 尚未登录/登录过期 */
   ApiResultCodeNoLogin: 1011,
