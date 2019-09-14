@@ -31,6 +31,5 @@ export default {
   background: #ecf2f3;
   width: 100%;
   height: 100%;
-  font: 12px Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
 }
 </style>
