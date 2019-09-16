@@ -2,7 +2,7 @@ import VueRouter from 'vue-router'
 import * as Axios from 'axios'
 import constant from '@/constant'
 
-const baseURL = ''
+// const baseURL = ''
 
 /* 缓存信息 */
 const CacheKeyOfAuth = '__CacheKeyOfAuth__'
@@ -86,7 +86,6 @@ const instance = Axios.create({
 
   /* API地址 */
   baseURL: constant.ApiBasePath,
-  // baseURL: baseURL,
 
   /* 请求超时 */
   timeout: constant.ApiMaxResponseTime,

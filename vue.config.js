@@ -29,6 +29,8 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src'))
+      .set('@Fn', resolve('src/common/js'))
+      .set('@Mixins', resolve('src/components/mixins'))
   },
 
   /* PWA相关 */
