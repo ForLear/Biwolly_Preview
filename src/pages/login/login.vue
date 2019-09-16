@@ -102,7 +102,7 @@
                         if (agin) {
                             sessionStorage.setItem('loginInfo', JSON.stringify(agin))
                             this.$router.push({
-                                path: '/'
+                                path: '/doc'
                             })
                         }
                         this.loading = false

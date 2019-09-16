@@ -14,6 +14,7 @@ const DocNav = () => import('@/pages/homePage/docNav')
 const Doc = () => import('@/pages/homePage/doc')
 const Ingress = () => import('@/pages/ingress/ingress')
 const Balabala = () => import('@/pages/balabala/index')
+const Trie = () => import('@/pages/dataStructure/tree/trie')
 
 const routes = [
   {
@@ -59,6 +60,11 @@ const routes = [
         path: '/Doc',
         name: 'Doc',
         component: Doc,
+      },
+      {
+        path: '/Trie',
+        name: 'Trie',
+        component: Trie,
       },
     ],
   },

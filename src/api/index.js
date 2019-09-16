@@ -1,4 +1,4 @@
-import { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr, wrap, ajax } from './ajax'
+import { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr, wrap, ajax } from './axios'
 
 export { getAuthInfo, setAuthInfo, clearAuthInfo, checkResp, handleErr, wrap }
 

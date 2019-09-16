@@ -7,7 +7,9 @@
           主站
         </dl>
       </router-link>
-      <dl :class="$style.item">算法</dl>
+      <router-link to="Trie">
+        <dl :class="$style.item">算法</dl>
+      </router-link>
       <router-link to="">
         <dl :class="$style.item">组件库</dl>
       </router-link>

@@ -46,7 +46,7 @@ router.beforeEach((to, from, next) => {
     }
   } else {
     if(loginInfo && loginInfo.access_token) {
-      next({ path: '/' })
+      next({ path: '/doc' })
     } else {
       next()
     }

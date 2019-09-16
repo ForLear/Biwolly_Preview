@@ -19,12 +19,12 @@ Vue.use(ElementUI)
 Vue.component('lottie', Lottie)
 
 /* 异常捕获 */
-Vue.config.errorHandler = function(msg, vm, trace) {
-  console.log('全局异常捕获')
-  console.log(msg)
-  console.log(vm)
-  console.log(trace)
-}
+// Vue.config.errorHandler = function(msg, vm, trace) {
+//   console.log('全局异常捕获')
+//   console.log(msg)
+//   console.log(vm)
+//   console.log(trace)
+// }
 
 new Vue({
   router,
