@@ -98,14 +98,16 @@
                 this.loading = true
                 this.$refs[formName].validate(async valid => {
                     if (valid) {
-                        let [agin, err] = await wrap(login(this.loginInfo))
-                        if (agin) {
-                            sessionStorage.setItem('loginInfo', JSON.stringify(agin))
-                            this.$router.push({
-                                path: '/doc'
-                            })
-                        }
-                        this.loading = false
+                        sessionStorage.setItem('loginInfo', JSON.stringify({ access_token: 'ok' }))
+                        
+                        // let [agin, err] = await wrap(login(this.loginInfo))
+                        // if (agin) {
+                        //     sessionStorage.setItem('loginInfo', JSON.stringify(agin))
+                        //     this.$router.push({
+                        //         path: '/doc'
+                        //     })
+                        // }
+                        // this.loading = false
                     } else {
                         this.$notify.error({
                             title: '错误',

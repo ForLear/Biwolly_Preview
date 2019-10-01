@@ -4,9 +4,9 @@
     <el-input v-model.lazy="inputVal.val" @change="search" list="sel"></el-input>
     <span> - {{ inputVal.result }} - </span>
     <br />
-    <el-select v-model="val" filterable>
-    <!-- <el-select v-model="val"> -->
-      <el-option v-for="(item, index) in arr" :label="item.phone" :value="item.phone" :key="index"></el-option>
+    <!-- <el-select v-model="val" filterable> -->
+    <el-select v-model="val">
+      <el-option v-for="(item, index) in arr" :label="item.phone" :value="item.phone" :key="index" v-show="filterShow(inputVal.val, item.phone)"></el-option>
     </el-select>
   </div>
 </template>
@@ -28,6 +28,7 @@
           val: '',
           result: '',
         },
+        tplData: 123
       }
     },
 
@@ -40,7 +41,7 @@
     methods: {
       /* 模拟数据请求源:  */
       getData() {
-        fetch("https://randomuser.me/api/?results=5000&inc=gender,email,phone,cell,nat").then(response => {
+        fetch('https://randomuser.me/api/?results=5000&inc=gender,email,phone,cell,nat').then(response => {
           return response.json()
         }).then(res => {
           localStorage.setItem('dataArr', JSON.stringify(res.results))
@@ -49,8 +50,8 @@
       },
 
       search(val) {
-        this.arr = this.arrFil(val)
-        this.inputVal.result = val
+        // this.arr = this.arrFil(val)
+        // this.inputVal.result = val
       },
     },
   }

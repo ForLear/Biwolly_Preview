@@ -1,4 +1,4 @@
-import { isEmptyObj, arrRemoval, ArrFilter } from '@Fn/fn'
+import { isEmptyObj, arrRemoval, ArrFilter, EscapeRegexpString } from '@Fn/fn'
 
 export const Trie = {
   data() {
@@ -26,8 +26,11 @@ export const Trie = {
     }
   },
   methods: {
-    arrFil (val) {
+    arrFil(val) {
       return new ArrFilter(this.dataArr, val, 'phone').filters()
     },
+    filterShow(input, val) {
+      return new RegExp(EscapeRegexpString(input), 'i').test(val)
+    }
   },
 }

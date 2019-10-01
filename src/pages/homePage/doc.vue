@@ -4,11 +4,14 @@
             <!-- 十连抽 -->
             <luck-ten title="抽奖"></luck-ten>
             <el-button size="mini">点</el-button>
+            <div style="height: 3000px;width: 500px"></div>
+            <el-button size="mini" @click="top">点我</el-button>
         </div>
     </section>
 </template>
 
 <script lang="ts">
+    import { viewport } from '@Fn/viewport'
     import LuckTen from '@/components/luckDraw/luckTen'
     import {
         register,
@@ -34,7 +37,9 @@
 
         watch: {},
 
-        created() { },
+        created() {
+            // viewport(window, document)
+        },
 
         mounted() {
             // this.login()
@@ -52,6 +57,12 @@
                 const [agin, err] = await wrap(login(params))
                 console.log(agin, err)
                 // this.load = false
+            },
+            top(e) {
+                document.body.scrolltop = 0
+                e.pageY = 0
+                console.log(e.pageY)
+                // alert(document.documentElement)
             },
         },
     }
