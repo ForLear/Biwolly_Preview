@@ -99,7 +99,9 @@
                 this.$refs[formName].validate(async valid => {
                     if (valid) {
                         sessionStorage.setItem('loginInfo', JSON.stringify({ access_token: 'ok' }))
-                        
+                        this.$router.push({
+                            path: '/doc'
+                        })
                         // let [agin, err] = await wrap(login(this.loginInfo))
                         // if (agin) {
                         //     sessionStorage.setItem('loginInfo', JSON.stringify(agin))

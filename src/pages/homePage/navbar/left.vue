@@ -8,13 +8,13 @@
         </dl>
       </router-link>
       <router-link to="Trie">
-        <dl :class="$style.item">算法</dl>
+        <dl :class="$style.item">番剧</dl>
       </router-link>
       <router-link to="">
-        <dl :class="$style.item">组件库</dl>
+        <dl :class="$style.item">游戏中心</dl>
       </router-link>
-      <router-link to="/Balabala">
-        <dl :class="$style.item">吧啦吧啦</dl>
+      <router-link to="/js_doc">
+        <dl :class="$style.item">直播</dl>
       </router-link>
       <a :href="down">
         <dl :class="$style.item">
