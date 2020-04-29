@@ -21,7 +21,7 @@
     export default {
         name: 'doc',
         components: {
-            LuckTen,
+            LuckTen
         },
         data() {
             return {
@@ -73,7 +73,7 @@
                             body: JSON.stringify(params)
                             /* body: `对象名=${params}` */
                         }
-                        break
+                        break   
                     case 'get': 
                     default: 
                         break
