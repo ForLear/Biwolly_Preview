@@ -68,3 +68,9 @@ export class ArrFilter {
             return this.result
       }
 }
+
+/**
+ * 过滤符号, 加上\
+ * @param {String} value 需要过滤的字符串
+ */
+export const EscapeRegexpString = (value = '') => String(value).replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')

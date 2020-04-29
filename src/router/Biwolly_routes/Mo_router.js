@@ -12,21 +12,15 @@ const Triopen = () => import('@/pages/triopen/triopen')
 const DocNav = () => import('@/pages/homePage/docNav')
 
 const Doc = () => import('@/pages/homePage/doc')
-const Ingress = () => import('@/pages/ingress/ingress')
-const Balabala = () => import('@/pages/balabala/index')
 const Trie = () => import('@/pages/dataStructure/tree/trie')
 
+const JsDoc = () => import('@/pages/jsDoc/index')
+
+/* 移动端 */
+const H5 = () => import('@/pages/viewH5/index')
+const Fish = () => import('@/pages/viewH5/show/show')
+
 const routes = [
-  {
-    path: '/Ingress',
-    name: 'Ingress',
-    component: Ingress,
-  },
-  {
-    path: '/Balabala',
-    name: 'Balabala',
-    component: Balabala,
-  },
   {
     path: '/',
     name: '',
@@ -34,7 +28,7 @@ const routes = [
     children: [
       {
         path: '/show',
-        name: 'home',
+        name: 'show',
         component: Home,
       }
     ]
@@ -66,8 +60,25 @@ const routes = [
         name: 'Trie',
         component: Trie,
       },
+      {
+        path: '/Js_Doc',
+        name: 'JsDoc',
+        component: JsDoc,
+      }
     ],
   },
+  {
+    path: '/',
+    name: '',
+    component: H5,
+    children: [
+      {
+        path: '/Fish',
+        name: 'Fish',
+        component: Fish,
+      },
+    ]
+  }
 ]
 
 export default routes

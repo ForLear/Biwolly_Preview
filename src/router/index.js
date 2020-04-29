@@ -11,7 +11,7 @@ Vue.use(Router)
 
 const home = {
   path: '/',
-  name: 'Home',
+  name: '',
   component: Home,
   children: [],
 }
@@ -36,6 +36,12 @@ const router = new Router({
 
 /* 路由监听 */
 router.beforeEach((to, from, next) => {
+  if(to.path === '/') {
+    next({ path: '/doc' })
+  } else {
+    next()
+  }
+  return
   const loginInfo = JSON.parse(sessionStorage.getItem('loginInfo'))
   /* 验证登录信息等 */
   if(to.path !== '/login') {

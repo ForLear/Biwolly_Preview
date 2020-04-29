@@ -20,7 +20,8 @@ function resolve (dir) {
 
 module.exports = {
   /* 基本路径 */
-  baseUrl: IsProd ? BaseDevp : BaseTest,
+  // baseUrl: IsProd ? BaseDevp : BaseTest,
+  baseUrl: './',
   
   /* 输出文件路径 */
   outputDir: IsProd ? outputProd : outputDevp,
@@ -35,6 +36,17 @@ module.exports = {
 
   /* PWA相关 */
   pwa: {},
+
+  /* 用于多页配置, 默认为undefined */
+  // pages: {
+  //   index: {
+  //     entry: ['./src/common/js/viewport', './src/main.js'],
+  //     template: 'public/index.html',
+  //     filename: 'index.html',
+  //     title: '3.0',
+  //   },
+  //   subpage: 'src/main.js'
+  // },
 
   /* 用于嵌套生成的静态资产（js，css，img，fonts）的目录 */
   // assetsDir: 'static',

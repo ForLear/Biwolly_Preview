@@ -3,7 +3,6 @@
         <div v-loading="load" :class="$style.place">
             <!-- 十连抽 -->
             <luck-ten title="抽奖"></luck-ten>
-            <el-button size="mini">点</el-button>
         </div>
     </section>
 </template>
@@ -22,11 +21,11 @@
     export default {
         name: 'doc',
         components: {
-            LuckTen,
+            LuckTen
         },
         data() {
             return {
-                load: false
+                load: false,
             }
         },
 
@@ -34,25 +33,62 @@
 
         watch: {},
 
-        created() { },
+        created() {
+        },
 
         mounted() {
+            // console.log(this)
             // this.login()
         },
 
         methods: {
             /* 登录测试 */
             async login() {
-                let params = {
-                    email: '88888881@qq.com',
-                    // password: '123456'
-                    password: '123456'
-                }
+                // let params = {
+                //     email: '88888881@qq.com',
+                //     // password: '123456'
+                //     password: '123456'
+                // }
                 // this.load = true
-                const [agin, err] = await wrap(login(params))
-                console.log(agin, err)
+                // const [agin, err] = await wrap(login(params))
+                // console.log(agin, err)
                 // this.load = false
+
+                const [url] = ['https://randomuser.me/api/']
+                let agin = await this.api('get', url)
+                console.log(agin)
             },
+
+            async api(post = 'post', url, params = {}) {
+                let POST = {}
+                switch(post) {
+                    case 'post': 
+                        POST = {
+                            method: 'POST',
+                            mode: 'cors',
+                            credentials: 'include',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded'
+                            },
+                            body: JSON.stringify(params)
+                            /* body: `对象名=${params}` */
+                        }
+                        break   
+                    case 'get': 
+                    default: 
+                        break
+                }
+                try {
+                    const agin = await fetch(url, POST)
+                    return agin.ok ? await agin.json() : console.error('not ok!')
+                } catch (err) {
+                    console.error('Network is not ok!!')
+                    const result = Object.create(null)
+                    result.status = false
+                    return result
+                }
+                // return await fetch(url, POST)
+            }
         },
     }
 </script>
