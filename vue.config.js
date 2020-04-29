@@ -31,7 +31,7 @@ module.exports = {
     config.resolve.alias
       .set('@', resolve('src'))
       .set('@Fn', resolve('src/common/js'))
-      .set('@Mixins', resolve('src/components/mixins'))
+      .set('@Mixins', resolve('src/common/components/mixins'))
   },
 
   /* PWA相关 */

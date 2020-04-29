@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang='scss' module>
-@import '@/common/css/element.scss';
+@import '@/common/style/element.scss';
 header {
   background: hsla(0,0%,100%,.4);
   position: fixed;

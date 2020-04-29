@@ -27,7 +27,7 @@
       <!-- </a> -->
       <div :class="$style.ShowCode">
         <div :class="$style.QQ">
-          <img :class="$style.QRCode" src="@/common/triopen/Code.png" alt="北斗华南粉丝群二维码">
+          <img :class="$style.QRCode" src="@/assets/triopen/Code.png" alt="北斗华南粉丝群二维码">
         </div>
       </div>
     </dt>
@@ -50,7 +50,7 @@
 </script>
 
 <style lang='scss' module>
-  @import '@/common/css/element.scss';
+  @import '@/common/style/element.scss';
   .items {
     @include list(row);
     clear: both;
@@ -61,7 +61,7 @@
       margin-right: 5px;
       margin-top: 7px;
       display: inline-block;
-      background: url(@/common/triopen/Logo.png) no-repeat;
+      background: url(@/assets/triopen/Logo.png) no-repeat;
     }
 
     .home {
@@ -117,7 +117,7 @@
       width: 259px;
       height: 134px;
       top: 42px;
-      background: url(@/common/image/QRCode.png);
+      background: url(@/assets/image/QRCode.png);
       .QRCode {
         width: 100px;
         height: 100px;

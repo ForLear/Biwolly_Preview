@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang='scss' module>
-  @import '@/common/css/element.scss';
+  @import '@/common/style/element.scss';
   .items {
     @include list(row);
     clear: both;
@@ -54,14 +54,14 @@ export default {
       height: 13px;
       margin-right: 5px;
       display: inline-block;
-      background-image: url(@/common/image/home.svg);
+      background-image: url(@/assets/image/home.svg);
     }
     .icon_phone {
       width: 12px;
       height: 11px;
       margin-right: 1px;
       display: inline-block;
-      background-image: url(@/common/image/phone.svg);
+      background-image: url(@/assets/image/phone.svg);
     }
     .item {
       float: left;
@@ -90,7 +90,7 @@ export default {
     margin-left: 227px;
     text-align: center;
     transition: all .5s;
-    background: url(@/common/image/QRCode.png);
+    background: url(@/assets/image/QRCode.png);
     opacity: 0;
     visibility: hidden;
     .QRCode {

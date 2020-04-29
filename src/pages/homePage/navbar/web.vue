@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang='scss' module>
-  @import '@/common/css/element.scss';
+  @import '@/common/style/element.scss';
   .web_ui {
     @include list(row);
     width: 360px;
@@ -71,27 +71,27 @@ export default {
       .batman {
         width: 24px;
         height: 18px;
-        background: url(@/common/image/batman.svg);
+        background: url(@/assets/image/batman.svg);
       }
       .fatman {
         width: 20px;
         height: 18px;
-        background: url(@/common/image/fatman.svg);
+        background: url(@/assets/image/fatman.svg);
       }
       .sick {
         width: 20px;
         height: 18px;
-        background: url(@/common/image/sick.svg);
+        background: url(@/assets/image/sick.svg);
       }
       .glass {
         width: 20px;
         height: 18px;
-        background: url(@/common/image/glass.svg);
+        background: url(@/assets/image/glass.svg);
       }
       .man {
         width: 18px;
         height: 18px;
-        background: url(@/common/image/man.svg);
+        background: url(@/assets/image/man.svg);
       }
     }
     li:hover {

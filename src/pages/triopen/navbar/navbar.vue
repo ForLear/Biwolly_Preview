@@ -60,42 +60,42 @@ export default {
     height: 300px;
     margin: 0 auto;
     display: inline-block;
-    background: url(@/common/triopen/bigBro.png) no-repeat;
+    background: url(@/assets/triopen/bigBro.png) no-repeat;
   }
   .one {
     width: 400px;
     height: 300px;
     margin: 0 auto;
     display: inline-block;
-    background: url(@/common/triopen/inter1.png) no-repeat;
+    background: url(@/assets/triopen/inter1.png) no-repeat;
   }
   .two {
     width: 400px;
     height: 300px;
     margin: 0 auto;
     display: inline-block;
-    background: url(@/common/triopen/inter2.png) no-repeat;
+    background: url(@/assets/triopen/inter2.png) no-repeat;
   }
   .three {
     width: 400px;
     height: 300px;
     margin: 0 auto;
     display: inline-block;
-    background: url(@/common/triopen/inter3.png) no-repeat;
+    background: url(@/assets/triopen/inter3.png) no-repeat;
   }
   .fuor {
     width: 400px;
     height: 300px;
     margin: 0 auto;
     display: inline-block;
-    background: url(@/common/triopen/inter4.png) no-repeat;
+    background: url(@/assets/triopen/inter4.png) no-repeat;
   }
   .five {
     width: 400px;
     height: 300px;
     margin: 0 auto;
     display: inline-block;
-    background: url(@/common/triopen/inter5.png) no-repeat;
+    background: url(@/assets/triopen/inter5.png) no-repeat;
   }
 }
 </style>

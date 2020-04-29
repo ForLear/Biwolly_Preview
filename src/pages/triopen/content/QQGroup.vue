@@ -37,7 +37,7 @@
       width: 713px;
       height: 420px;
       margin: 0 auto;
-      background: url(@/common/triopen/triopen.png) no-repeat;
+      background: url(@/assets/triopen/triopen.png) no-repeat;
     }
   }
 </style>

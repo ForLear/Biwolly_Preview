@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang='scss' module>
-@import '@/common/css/element.scss';
+@import '@/common/style/element.scss';
 
 .bg_color {
   background: #ecf2f3;

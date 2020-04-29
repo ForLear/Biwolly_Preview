@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '@/common/css/element.scss';
+@import '@/common/style/element.scss';
 .header {
   background-color: rgba(36,33,46,0.48) !important;
   box-shadow: none !important;

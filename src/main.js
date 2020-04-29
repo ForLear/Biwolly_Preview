@@ -2,7 +2,7 @@ import Vue from 'vue'
 /* 引入ElementUI组件库 */
 import ElementUI from 'element-ui'
 /* 项目内组件路径 */
-import Biwolly from '@/components'
+import Biwolly from '@/common/components'
 import 'element-ui/lib/theme-chalk/index.css'
 /* 引入Lottie动画库 */
 import Lottie from 'vue-lottie'
