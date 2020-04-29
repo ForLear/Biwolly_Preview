@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
-    '@vue/app'
-    // ['es2015', { modules: false }]
+    '@vue/app',
+    // [{ modules: false }]
   ],
   plugins: [ 
     /* 减少element-ui的打包体积 */
@@ -10,7 +10,14 @@ module.exports = {
       {
         libraryName: 'element-ui',
         styleLibraryName: 'theme-chalk',
-      },
+      }
     ],
-  ],
+    [
+      'import',
+      {
+        libraryName: 'components',
+        customName: name => `src/components/${name}`,
+      }
+    ],
+  ]
 }

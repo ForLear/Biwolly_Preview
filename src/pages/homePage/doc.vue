@@ -8,7 +8,6 @@
 </template>
 
 <script lang="ts">
-    import LuckTen from '@/components/luckDraw/luckTen'
     import {
         register,
         login,
@@ -20,9 +19,6 @@
     } from 'vuex'
     export default {
         name: 'doc',
-        components: {
-            LuckTen
-        },
         data() {
             return {
                 load: false,

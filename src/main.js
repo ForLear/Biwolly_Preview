@@ -1,6 +1,8 @@
 import Vue from 'vue'
 /* 引入ElementUI组件库 */
 import ElementUI from 'element-ui'
+/* 项目内组件路径 */
+import Biwolly from '@/components'
 import 'element-ui/lib/theme-chalk/index.css'
 /* 引入Lottie动画库 */
 import Lottie from 'vue-lottie'
@@ -21,6 +23,7 @@ import { viewport } from '@Fn/viewport'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.use(Biwolly)
 
 /* 全局注册lottie组件 */
 Vue.component('lottie', Lottie)
@@ -40,7 +43,6 @@ Reflect.ownKeys(Data).forEach(key => {
   //   },
   // })
 })
-console.log(Vue.prototype)
 
 
 Object.defineProperty(Vue.prototype, '$Fn', {
