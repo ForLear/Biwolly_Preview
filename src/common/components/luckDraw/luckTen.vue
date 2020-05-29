@@ -109,6 +109,20 @@
           this.srFlag = false
         }
       },
+
+      // 计算无视
+      sum(num, ...args) {
+        let base = num
+        args.forEach(item => {
+          num += (100 - num) * item / 100
+        })
+        
+        // 伤害比例
+        const hurt = Math.round((1 - (1 - base / 100) * 3) * 100),
+              impHurt = Math.round((1 - (1 - num / 100) * 3) * 100),
+              imp = Math.round((impHurt - hurt) / impHurt * 100)
+        console.log(`基础无视为${base}%, 提升至${num}%,  对300防boss造成伤害四舍五从${hurt}%提升入为${impHurt}%, 提升了${imp}%`)
+      }
     },
 
   }
