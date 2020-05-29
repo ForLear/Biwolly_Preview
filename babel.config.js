@@ -1,7 +1,7 @@
 module.exports = {
   presets: [
     '@vue/app',
-    // [{ modules: false }]
+    // [{ modules: false }] 
   ],
   plugins: [ 
     /* 减少element-ui的打包体积 */
