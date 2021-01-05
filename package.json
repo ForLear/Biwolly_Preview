@@ -16,7 +16,7 @@
     "test_e2e": "vue-cli-service test:e2e"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-plugin-component": "^1.1.1",
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.6",
